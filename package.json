@@ -12,5 +12,12 @@
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "daisyui": "^3.9.4",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "standard": "^17.1.0"
   }
 }
