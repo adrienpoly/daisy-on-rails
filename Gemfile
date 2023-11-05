@@ -73,3 +73,5 @@ end
 
 gem "authentication-zero", "~> 3.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+
+gem "hotwire-livereload", "~> 1.3", :group => :development
