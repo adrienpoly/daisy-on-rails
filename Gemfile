@@ -51,6 +51,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug"
   gem "debug", platforms: %i[ mri windows ]
+  gem "standardrb", "~> 1.0"
 end
 
 group :development do
@@ -63,6 +64,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
+  gem "hotwire-livereload"
 end
 
 group :test do
@@ -74,4 +76,11 @@ end
 gem "authentication-zero", "~> 3.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 
-gem "hotwire-livereload", "~> 1.3", :group => :development
+gem "heroicon", "~> 1.0"
+
+gem "view_component", "~> 3.7"
+
+gem "dry-initializer-rails"
+
+gem "dry-types", "~> 1.7"
+
