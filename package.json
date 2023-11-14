@@ -17,7 +17,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
-    "daisyui": "^3.9.4",
+    "daisyui": "^4.0.3",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
     "standard": "^17.1.0"

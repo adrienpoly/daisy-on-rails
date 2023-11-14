@@ -1,0 +1,6 @@
+
+<% if Current.user %>
+  <%= render "shared/authenticated" %>
+<% else %>
+  <%= render "shared/unauthenticated" %>
+<% end %>

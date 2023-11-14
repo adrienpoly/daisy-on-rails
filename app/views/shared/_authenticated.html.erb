@@ -1,0 +1,26 @@
+<div class="navbar bg-white shadow">
+  <div class="navbar-start">
+    <%= ui_button "ShopingList", url: root_path, kind: :ghost %>
+  </div>
+  <div class="navbar-center hidden">
+
+  </div>
+  <div class="navbar-end">
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <%= ui_dropdown align: :end do |c| %>
+            <% c.with_menu_item_link_to "Mes listes", "#" %>
+            <% c.with_menu_item_divider %>
+            <% c.with_menu_item_button_to "Se déconnecter", Current.session, method: :delete %>
+              <div class="avatar placeholder">
+                <div class="bg-neutral-focus text-neutral-content rounded-full w-8">
+                  <span class="text-xs"><%= [Current.user.first_name.first, Current.user.last_name.first].join.upcase %></span>
+                </div>
+              </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

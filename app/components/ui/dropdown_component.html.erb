@@ -1,0 +1,10 @@
+<%= content_tag :details, class: classes, **attributes do %>
+  <summary class="m-1 btn btn-ghost">
+    <%= content %>
+  </summary>
+  <%= content_tag :ul, class: content_classes do %>
+    <% menu_items.each do |menu_item| %>
+      <%= menu_item %>
+    <% end %>
+  <% end %>
+<% end %>
