@@ -1,0 +1,5 @@
+fr:
+  registrations:
+    new:
+      title: My app name
+      already_have_an_account: "Vous avez déjà un compte ?"

@@ -2,3 +2,4 @@ fr:
   sessions:
     new:
       title: My app name
+      no_account_yet: "Vous n'avez pas de compte ?"
