@@ -1,0 +1,12 @@
+<div class="toast">
+  <% flash.each_with_index do |(key, content), ind| %>
+    <%= ui_alert(kind: key,
+          data: {
+            controller: "leave-after",
+            leave_after_transition_class: "transform ease-out duration-300 transition",
+            leave_after_transition_to_class: "opacity-0 scale-90",
+          }) do
+        content
+      end %>
+  <% end %>
+</div>

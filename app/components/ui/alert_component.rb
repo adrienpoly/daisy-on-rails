@@ -4,6 +4,8 @@ class Ui::AlertComponent < ApplicationComponent
   include Heroicon::Engine.helpers
   KIND_MAPPING = {
     info: "alert-info",
+    notice: "alert-info",
+    alert: "alert-warning",
     success: "alert-success",
     warning: "alert-warning",
     error: "alert-error"
@@ -11,6 +13,8 @@ class Ui::AlertComponent < ApplicationComponent
 
   ICON_MAPPING = {
     info: "information-circle",
+    notice: "information-circle",
+    alert: "exclamation-triangle",
     success: "check-circle",
     warning: "exclamation-triangle",
     error: "x-circle"

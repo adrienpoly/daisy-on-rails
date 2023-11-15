@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
+
+import LeaveAfterController from "./leave_after_controller"
+application.register("leave-after", LeaveAfterController)

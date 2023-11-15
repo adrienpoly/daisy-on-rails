@@ -6,8 +6,9 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <div class="min-h-screen w-full flex flex-col items-center justify-center prose">
+    <div class="min-h-[calc(100vh-4rem)] w-full flex flex-col items-center justify-center">
       <%= yield %>
     </div>
+    <%= render "shared/flashes" %>
   </body>
 </html>
