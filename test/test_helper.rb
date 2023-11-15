@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "components/ui/field/test_helpers"
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -11,6 +12,11 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def sign_in_as(user)
-    post(sign_in_url, params: { email: user.email, password: "Secret1*3*5*" }); user
+    post(sign_in_url, params: {email: user.email, password: "Secret1*3*5*"})
+    user
   end
+end
+
+class ViewComponent::TestCase
+  include Components::Ui::Field::TestHelpers
 end
