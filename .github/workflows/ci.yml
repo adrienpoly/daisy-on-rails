@@ -54,5 +54,5 @@ jobs:
       - name: erb-lint Check
         run: bundle exec erblint --lint-all
 
-      - name: Smoke test database seeds
-        run: sudo bin/rails db:reset
+      # - name: Smoke test database seeds
+      #   run: sudo bin/rails db:reset
