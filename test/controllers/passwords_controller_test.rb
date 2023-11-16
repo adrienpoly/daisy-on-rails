@@ -19,6 +19,6 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
     patch password_url, params: {password_challenge: "SecretWrong1*3", password: "Secret6*4*2*", password_confirmation: "Secret6*4*2*"}
 
     assert_response :unprocessable_entity
-    assert_select "li", /Password challenge is invalid/
+    assert_select "li", /#{I18n.t("activerecord.errors.models.user.attributes.password_challenge.invalid")}/
   end
 end

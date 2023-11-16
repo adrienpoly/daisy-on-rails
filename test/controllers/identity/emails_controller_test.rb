@@ -19,6 +19,6 @@ class Identity::EmailsControllerTest < ActionDispatch::IntegrationTest
     patch identity_email_url, params: {email: "new_email@hey.com", password_challenge: "SecretWrong1*3"}
 
     assert_response :unprocessable_entity
-    assert_select "li", /Password challenge is invalid/
+    assert_select "li", /#{I18n.t("activerecord.errors.models.user.attributes.password_challenge.invalid")}/
   end
 end
