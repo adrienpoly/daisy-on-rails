@@ -1,52 +1,23 @@
-<div class="max-w-sm w-full">
-  <h1 class="text-center mb-6"><%= t('.title') %></h1>
+<h1 class="text-center mb-6"><%= t('.title') %></h1>
 
-    <%= form_with(url: sign_up_path) do |form| %>
-      <div class="flex flex-col gap-4 w-full">
-        <% if @user.errors.any? %>
-          <div style="color: red">
-            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_with(url: sign_up_path, class: "flex flex-col gap-4 w-full max-w-sm") do |form| %>
+  <% if @user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-            <ul>
-              <% @user.errors.each do |error| %>
-                <li><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
         <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.ui_email_field :email, label: false, placeholder: t('email'), required: true, autocomplete: "email", autofocus: true %>
+  <%= form.ui_password_field :password, label: false, placeholder: t('password'), hint: "6 characters minimum.", required: true, autocomplete: "current-password" %>
+  <%= form.ui_submit t('sign_up'), id: :sign_up, class: "mt-4" %>
+<% end %>
 
-        <div>
-          <label class="label">
-            <%= form.label :email, class: "label-text" %>
-          </label>
-          <%= form.email_field :email,
-                              value: params[:email_hint],
-                              required: true,
-                              autofocus: true,
-                              autocomplete: "email",
-                              class: "input input-bordered w-full"
-          %>
-        </div>
-
-        <div>
-          <label class="label">
-            <%= form.label :password, t('password'), class: "label-text" %>
-          </label>
-          <%= form.password_field :password, required: true, autocomplete: "new-password", class: "input input-bordered w-full" %>
-          <label class="label">
-            <div class="label-text">12 characters minimum.</div>
-          </label>
-        </div>
-
-        <div>
-          <%= ui_button t('sign_up'), kind: :primary, type: :submit, class: "w-full mt-4" %>
-        </div>
-
-        <div>
-          <%= t('.already_have_an_account') %>
-          <%= link_to t('login'), sign_in_path %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div class="mt-4">
+  <%= t('.already_have_an_account') %>
+  <%= link_to t('login'), sign_in_path, class: "link link-primary" %>
 </div>
