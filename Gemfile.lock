@@ -77,6 +77,9 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     authentication-zero (3.0.2)
     base64 (0.2.0)
@@ -195,6 +198,8 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.6.0)
+    nokogiri (1.15.4-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
@@ -290,6 +295,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     smart_properties (1.17.0)
+    sqlite3 (1.6.8-aarch64-linux)
     sqlite3 (1.6.8-arm64-darwin)
     sqlite3 (1.6.8-x86_64-linux)
     standard (1.32.0)
@@ -337,10 +343,12 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
+  annotate
   authentication-zero (~> 3.0)
   bcrypt (~> 3.1.7)
   bootsnap
