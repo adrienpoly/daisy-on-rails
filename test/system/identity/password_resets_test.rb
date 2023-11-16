@@ -8,9 +8,9 @@ class Identity::PasswordResetsTest < ApplicationSystemTestCase
 
   test "sending a password reset email" do
     visit sign_in_url
-    click_on "Forgot your password?"
+    click_on I18n.t("forgot_password")
 
-    fill_in "Email", with: @user.email
+    fill_in "email", with: @user.email
     click_on "Send password reset email"
 
     assert_text "Check your email for reset instructions"

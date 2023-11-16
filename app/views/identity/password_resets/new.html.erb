@@ -2,13 +2,7 @@
 
 <h1 class="text-center mb-6">Forgot your password?</h1>
 
-<%= form_with(url: identity_password_reset_path) do |form| %>
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.email_field :email, required: true, autofocus: true %>
-  </div>
-
-  <div>
-    <%= form.submit "Send password reset email" %>
-  </div>
+<%= form_with(url: identity_password_reset_path, class: "flex flex-col gap-4 w-full max-w-sm") do |form| %>
+  <%= form.ui_email_field :email, label: :email, required: true, autofocus: true %>
+  <%= form.ui_submit "Send password reset email" %>
 <% end %>
