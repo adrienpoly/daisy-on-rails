@@ -43,8 +43,7 @@ jobs:
 
       - name: Run tests
         run: |
-          bin/rails test
-          bin/rails test:system
+          bin/rails test:all
 
       - name: StandardRB Check
         run: bundle exec standardrb
