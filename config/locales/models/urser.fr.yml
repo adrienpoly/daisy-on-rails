@@ -1,9 +1,8 @@
-fr.activerecord:
-  errors:
-    models:
-      user:
-        attributes:
-          password_challenge:
-            invalid: Le challenge du mot de passe est invalide
-
-activerecord.errors.models.user.attributes.password_challenge.invalid:
+fr:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_challenge:
+              invalid: Le challenge du mot de passe est invalide
