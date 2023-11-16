@@ -1,34 +1,15 @@
-<p style="color: green"><%= notice %></p>
-<p style="color: red"><%= alert %></p>
+<h1 class="text-center mb-6"><%= t('.title') %></h1>
 
-<div class="max-w-sm w-full">
-  <h1 class="text-center mb-6"><%= t('.title') %></h1>
-
-  <%= form_with(url: sign_in_path) do |form| %>
-    <div class="flex flex-col gap-4 w-full">
-      <div>
-        <label class="label">
-          <%= form.label :email, class: "label-text" %>
-        </label>
-        <%= form.email_field :email, value: params[:email_hint], required: true, autofocus: true, autocomplete: "email", class: "input input-bordered w-full" %>
-      </div>
-
-      <div>
-        <label class="label">
-          <%= form.label :password, t('password'), class: "label-text" %>
-          <%= link_to t('forgot_password'), new_identity_password_reset_path, class: "link link-primary" %>
-        </label>
-        <%= form.password_field :password, required: true, autocomplete: "current-password", class: "input input-bordered w-full" %>
-      </div>
-
-      <div>
-        <%= ui_button "Se connecter", kind: :primary, type: :submit, class: "w-full mt-4" %>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="mt-2">
-    <%= t('.no_account_yet') %>
-    <%= link_to t('sign_up'), sign_up_path %>
+<%= form_with(url: sign_in_path, class: "flex flex-col max-w-sm gap-6 w-full") do |form| %>
+  <%= form.ui_email_field :email, label: false, placeholder: t('email'), required: true, autofocus: true %>
+  <div class="flex flex-col gap-1">
+    <%= link_to t('forgot_password'), new_identity_password_reset_path, class: "link link-primary ml-auto" %>
+    <%= form.ui_password_field :password, label: false, placeholder: t('password'), required: true, autocomplete: "current-password" %>
   </div>
+  <%= form.ui_submit "Se connecter", class: "mt-6", id: :sign_in %>
+<% end %>
+
+<div class="mt-4">
+  <%= t('.no_account_yet') %>
+  <%= link_to t('sign_up'), sign_up_path, class: "link link-primary" %>
 </div>
