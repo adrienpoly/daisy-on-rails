@@ -33,9 +33,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build assets
-        run: yarn build:css && yarn build
-
       - name: Prepare database
         run: |
           bin/rails db:create
