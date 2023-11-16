@@ -3,7 +3,7 @@
 class Ui::DividerComponent < ApplicationComponent
   KIND_MAPPING = {
     horizontal: "divider-horizontal",
-    vertical: "divider-vertical",
+    vertical: "divider-vertical"
   }
 
   param :text, optional: true

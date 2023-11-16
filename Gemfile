@@ -52,6 +52,7 @@ group :development, :test do
   gem "byebug"
   gem "debug", platforms: %i[mri windows]
   gem "standardrb", "~> 1.0"
+  gem "erb_lint"
 end
 
 group :development do

@@ -11,13 +11,12 @@ class Identity::EmailsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update email" do
-    patch identity_email_url, params: { email: "new_email@hey.com", password_challenge: "Secret1*3*5*" }
+    patch identity_email_url, params: {email: "new_email@hey.com", password_challenge: "Secret1*3*5*"}
     assert_redirected_to root_url
   end
 
-
   test "should not update email with wrong password challenge" do
-    patch identity_email_url, params: { email: "new_email@hey.com", password_challenge: "SecretWrong1*3" }
+    patch identity_email_url, params: {email: "new_email@hey.com", password_challenge: "SecretWrong1*3"}
 
     assert_response :unprocessable_entity
     assert_select "li", /Password challenge is invalid/

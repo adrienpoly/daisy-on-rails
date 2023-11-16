@@ -80,6 +80,13 @@ GEM
     authentication-zero (3.0.2)
     base64 (0.1.1)
     bcrypt (3.1.19)
+    better_html (2.0.2)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.17.0)
@@ -124,6 +131,13 @@ GEM
       dry-inflector (~> 1.0)
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
+    erb_lint (0.5.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
     erubi (1.12.0)
     ffi (1.16.3)
     globalid (1.2.1)
@@ -277,6 +291,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    smart_properties (1.17.0)
     sqlite3 (1.6.8-aarch64-linux)
     sqlite3 (1.6.8-arm64-darwin)
     sqlite3 (1.6.8-x86_64-linux)
@@ -339,6 +354,7 @@ DEPENDENCIES
   debug
   dry-initializer-rails
   dry-types (~> 1.7)
+  erb_lint
   heroicon (~> 1.0)
   hotwire-livereload
   jbuilder

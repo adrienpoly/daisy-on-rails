@@ -14,7 +14,7 @@ class Ui::DropdownComponent < ApplicationComponent
         attributes[:class] = class_names("!whitespace-nowrap", attributes[:class])
         concat button_to(*args, **attributes)
       end
-    },
+    }
   }
   OPEN_FROM_MAPPING = {
     left: "dropdown-left",
@@ -36,7 +36,7 @@ class Ui::DropdownComponent < ApplicationComponent
   private
 
   def before_render
-    attributes[:data] = { controller: "dropdown" }
+    attributes[:data] = {controller: "dropdown"}
   end
 
   def classes

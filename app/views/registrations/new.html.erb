@@ -1,4 +1,4 @@
-<h1 class="text-center mb-6"><%= t('.title') %></h1>
+<h1 class="text-center mb-6"><%= t(".title") %></h1>
 
 <%= form_with(url: sign_up_path, class: "flex flex-col gap-4 w-full max-w-sm") do |form| %>
   <% if @user.errors.any? %>
@@ -12,12 +12,12 @@
       </ul>
     </div>
   <% end %>
-  <%= form.ui_email_field :email, label: false, placeholder: t('email'), required: true, autocomplete: "email", autofocus: true %>
-  <%= form.ui_password_field :password, label: false, placeholder: t('password'), hint: "6 characters minimum.", required: true, autocomplete: "current-password" %>
-  <%= form.ui_submit t('sign_up'), id: :sign_up, class: "mt-4" %>
+  <%= form.ui_email_field :email, label: false, placeholder: t("email"), required: true, autocomplete: "email", autofocus: true %>
+  <%= form.ui_password_field :password, label: false, placeholder: t("password"), hint: "6 characters minimum.", required: true, autocomplete: "current-password" %>
+  <%= form.ui_submit t("sign_up"), id: :sign_up, class: "mt-4" %>
 <% end %>
 
 <div class="mt-4">
-  <%= t('.already_have_an_account') %>
-  <%= link_to t('login'), sign_in_path, class: "link link-primary" %>
+  <%= t(".already_have_an_account") %>
+  <%= link_to t("login"), sign_in_path, class: "link link-primary" %>
 </div>
