@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - "*"
+  push:
+    branches:
+      - main
+
+concurrency: ci-${{ github.ref }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler: default
+          bundler-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build assets
+        run: yarn build:css && yarn build
+
+      - name: Prepare database
+        run: |
+          bin/rails db:create
+          bin/rails db:schema:load
+
+      - name: Run tests
+        run: |
+          bin/rails test
+          bin/rails test:system
+
+      - name: StandardRB Check
+        run: bundle exec standardrb
+
+      - name: StandardJS Check
+        run: yarn standard
+
+      - name: erb-lint Check
+        run: bundle exec erblint --lint-all
+
+      - name: Smoke test database seeds
+        run: sudo bin/rails db:reset
