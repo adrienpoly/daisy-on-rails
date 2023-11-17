@@ -1,0 +1,16 @@
+<div>
+  <% if label %>
+    <label class="label">
+      <%= form_builder.label label, class: "label-text" %>
+      <%= top_right_label %>
+    </label>
+  <% end %>
+  <%= form_builder.text_area name, class: field_classes, value: value, **attributes %>
+  <% if error %>
+    <div class="text-error mt-1"><%= error %></div>
+  <% elsif hint %>
+    <label class="label">
+      <div class="label-text"><%= hint %></div>
+    </label>
+  <% end %>
+</div>

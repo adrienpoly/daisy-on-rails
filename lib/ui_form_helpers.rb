@@ -17,6 +17,11 @@ module UiFormHelpers
     @template.render Ui::Field::TextComponent.new(field_name, form_builder: self, label: label, type: type, **attributes), &block
   end
 
+  def ui_text_area(field_name, attributes = {}, &block)
+    label = options.delete(:label) { field_name.to_s.humanize }
+    @template.render Ui::Field::TextAreaComponent.new(field_name, form_builder: self, label: label, **attributes), &block
+  end
+
   def ui_submit(value = nil, attributes = {})
     value ||= submit_default_value
     options.delete(:type)
