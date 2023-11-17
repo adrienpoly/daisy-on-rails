@@ -67,6 +67,7 @@ group :development do
 
   gem "hotwire-livereload"
   gem "letter_opener"
+  gem "annotate"
 end
 
 group :test do
@@ -85,11 +86,3 @@ gem "view_component", "~> 3.7"
 gem "dry-initializer-rails"
 
 gem "dry-types", "~> 1.7"
-
-group :development do
-  gem "annotate"
-end
-
-group :development do
-  gem "annotate"
-end
