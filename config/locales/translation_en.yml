@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      session: Session #g
+      user: User #g
+
+    attributes:
+      session:
+        ip_address: Ip address #g
+        user: :activerecord.models.user #g
+        user_agent: User agent #g
+
+      user:
+        admin: Admin #g
+        email: Email #g
+        first_name: First name #g
+        last_name: Last name #g
+        lists: Lists #g
+        password_digest: Password digest #g
+        sessions: Sessions #g
+        verified: Verified #g

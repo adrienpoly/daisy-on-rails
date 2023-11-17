@@ -68,6 +68,7 @@ group :development do
   gem "hotwire-livereload"
   gem "letter_opener"
   gem "annotate"
+  gem "i18n_generators"
 end
 
 group :test do
