@@ -53,6 +53,8 @@ group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "standardrb", "~> 1.0"
   gem "erb_lint"
+
+  gem "kamal"
 end
 
 group :development do
@@ -69,6 +71,7 @@ group :development do
   gem "letter_opener"
   gem "annotate"
   gem "i18n_generators"
+  gem "i18n-tasks"
 end
 
 group :test do
