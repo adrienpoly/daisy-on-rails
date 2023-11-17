@@ -2,6 +2,7 @@ module ViewComponentHelper
   UI_HELPERS = {
     alert: "Ui::AlertComponent",
     badge: "Ui::BadgeComponent",
+    back_to: "Ui::BackToComponent",
     button: "Ui::ButtonComponent",
     divider: "Ui::DividerComponent",
     dropdown: "Ui::DropdownComponent"

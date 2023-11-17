@@ -5,7 +5,8 @@ module.exports = {
     './app/components/**/*.rb',
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
-    './app/javascript/**/*.js'
+    './app/javascript/**/*.js',
+    './config/initializers/**/*.rb'
   ],
   theme: {
     container: {
