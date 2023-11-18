@@ -40,28 +40,11 @@ volumes:
   - "storage:/rails/storage"
 # Use accessory services (secrets come from .env).
 accessories:
-  search:
-    image: getmeili/meilisearch:v1.1
-    host: 91.107.208.207
-    port: 7700
-    env:
-      clear:
-        --http-addr: localhost:7700
-        --env: production
-        --db-path: storage/meilisearch
-        --no-analytics: true
-        --dump-dir: storage/meilisearch/dumps
-        --max-indexing-memory: 2Gb
-        --snapshot-dir: storage/meilisearch/snapshots
-      secret:
-        - MEILI_MASTER_KEY
-    volumes:
-      - "storage:/rails/storage"
-    # files:
-    #   - config/mysql/production.cnf:/etc/mysql/my.cnf
-    #   - db/production.sql.erb:/docker-entrypoint-initdb.d/setup.sql
-    # directories:
-    #   - data:/var/lib/mysql
+  # files:
+  #   - config/mysql/production.cnf:/etc/mysql/my.cnf
+  #   - db/production.sql.erb:/docker-entrypoint-initdb.d/setup.sql
+  # directories:
+  #   - data:/var/lib/mysql
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2
