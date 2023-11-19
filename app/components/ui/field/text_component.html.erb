@@ -6,8 +6,8 @@
     </label>
   <% end %>
   <%= form_builder.text_field name, class: field_classes, value: value, **attributes %>
-  <% if error %>
-    <div class="text-error mt-1"><%= error %></div>
+  <% if errors %>
+    <div class="label-text text-error"><%= errors %></div>
   <% elsif hint %>
     <label class="label">
       <div class="label-text"><%= hint %></div>

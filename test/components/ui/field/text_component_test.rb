@@ -48,6 +48,14 @@ class Ui::Field::TextComponentTest < ViewComponent::TestCase
     assert_selector(".text-error", text: "some error")
   end
 
+  test "component renders the model error message" do
+    @form.object.errors.add(:email, "some error")
+    render_inline(Ui::Field::TextComponent.new(:email, form_builder: @form, help_text: "some help text"))
+
+    refute_text("some help text")
+    assert_selector(".text-error", text: "some error")
+  end
+
   # test "component renders an input with the object value for the field" do
   #   user = User.new(email: "foo@bar.com")
   #   form = form_with(user)
