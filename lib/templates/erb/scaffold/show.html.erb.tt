@@ -1,4 +1,5 @@
 <div class="container">
+  <%%= ui_back_to t("<%= table_name %>.back"), <%= index_helper %>_path, class: "mb-4" %>
   <%%= render @<%= singular_table_name %> %>
 
   <%%= link_to 'Edit this <%= singular_table_name %>', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

@@ -1,5 +1,5 @@
 <div class="container">
-  <%= ui_back_to t("<%= table_name %>.back"), lists_path, class: "mb-4" %>
+  <%%= ui_back_to t("<%= table_name %>.back"), <%= index_helper %>_path, class: "mb-4" %>
 
   <h1>Editing <%= human_name.downcase %></h1>
 
