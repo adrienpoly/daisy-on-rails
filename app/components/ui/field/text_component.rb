@@ -10,6 +10,14 @@ class Ui::Field::TextComponent < ApplicationComponent
   option :hint, type: Dry::Types["coercible.string"], optional: true
   option :value, type: Dry::Types["coercible.string"], optional: true
 
+  private
+
+  def value
+    return super unless form_builder&.object
+
+    form_builder.object[name] || super
+  end
+
   def field_classes
     classes = attributes.delete(:class)
     [class_names("input input-bordered w-full", "input-error": errors), classes].compact.join(" ")

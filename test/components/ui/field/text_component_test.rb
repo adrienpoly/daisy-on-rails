@@ -56,13 +56,13 @@ class Ui::Field::TextComponentTest < ViewComponent::TestCase
     assert_selector(".text-error", text: "some error")
   end
 
-  # test "component renders an input with the object value for the field" do
-  #   user = User.new(email: "foo@bar.com")
-  #   form = form_with(user)
-  #   render_inline(Ui::Field::TextComponent.new(:email, form_builder: form, value: "fizz@buzz.com"))
+  test "component renders an input with the object value for the field" do
+    user = User.new(email: "foo@bar.com")
+    form = form_with(user)
+    render_inline(Ui::Field::TextComponent.new(:email, form_builder: form, value: "fizz@bar.com"))
 
-  #   assert_selector("input[value=\"foo@bar.com\"]")
-  # end
+    assert_selector("input[value=\"foo@bar.com\"]")
+  end
 
   test "component renders an input with the default value for the field of no value in the object" do
     render_inline(Ui::Field::TextComponent.new(:email, form_builder: @form, value: "fizz@buzz.com"))
