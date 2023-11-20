@@ -8,7 +8,7 @@ class SessionsTest < ApplicationSystemTestCase
   test "visiting the index" do
     sign_in_as @user
 
-    click_on "Devices & Sessions"
+    visit sessions_url
     assert_selector "h1", text: "Sessions"
   end
 
@@ -24,7 +24,9 @@ class SessionsTest < ApplicationSystemTestCase
   test "signing out" do
     sign_in_as @user
 
-    click_on "Log out"
+    find_by_id("navbar_toggle").click
+    click_on :sign_out, visible: true
+
     assert_text "That session has been logged out"
   end
 end
