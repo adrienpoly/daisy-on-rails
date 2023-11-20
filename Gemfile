@@ -78,6 +78,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "magic_test", git: "https://github.com/bullet-train-co/magic_test.git", branch: "main"
 end
 
 gem "authentication-zero", "~> 3.0"
