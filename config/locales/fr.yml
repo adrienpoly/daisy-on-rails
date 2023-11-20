@@ -1,77 +1,68 @@
 ---
 fr:
-  password: "Mot de passe"
-  email: "Adresse email"
-  login: "Se connecter"
-  logout: "Se déconnecter"
-  sign_up: "S'inscrire"
-  remember_me: "Se souvenir de moi"
-  forgot_password: "Mot de passe oublié ?"
-  reset_password: "Réinitialiser le mot de passe"
   activerecord:
     errors:
       messages:
-        record_invalid: "La validation a échoué : %{errors}"
+        record_invalid: 'La validation a échoué : %{errors}'
         restrict_dependent_destroy:
-          has_one:
-            Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
-            dépendant(e) existe
-          has_many:
-            Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+  cancel: Annuler
   date:
     abbr_day_names:
-      - dim
-      - lun
-      - mar
-      - mer
-      - jeu
-      - ven
-      - sam
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
     abbr_month_names:
-      -
-      - jan.
-      - fév.
-      - mars
-      - avr.
-      - mai
-      - juin
-      - juil.
-      - août
-      - sept.
-      - oct.
-      - nov.
-      - déc.
+    -
+    - jan.
+    - fév.
+    - mars
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
     day_names:
-      - dimanche
-      - lundi
-      - mardi
-      - mercredi
-      - jeudi
-      - vendredi
-      - samedi
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
     formats:
       default: "%d/%m/%Y"
       long: "%-d %B %Y"
       short: "%-d %b"
     month_names:
-      -
-      - janvier
-      - février
-      - mars
-      - avril
-      - mai
-      - juin
-      - juillet
-      - août
-      - septembre
-      - octobre
-      - novembre
-      - décembre
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
     order:
-      - :day
-      - :month
-      - :year
+    - :day
+    - :month
+    - :year
   datetime:
     distance_in_words:
       about_x_hours:
@@ -87,39 +78,40 @@ fr:
         one: presque un an
         other: presque %{count} ans
       half_a_minute: une demi‑minute
-      less_than_x_seconds:
-        zero: moins d'une seconde
-        one: moins d'une seconde
-        other: moins de %{count} secondes
       less_than_x_minutes:
-        zero: moins d'une minute
         one: moins d'une minute
         other: moins de %{count} minutes
+        zero: moins d'une minute
+      less_than_x_seconds:
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+        zero: moins d'une seconde
       over_x_years:
         one: plus d'un an
         other: plus de %{count} ans
-      x_seconds:
-        one: "%{count} seconde"
-        other: "%{count} secondes"
-      x_minutes:
-        one: "%{count} minute"
-        other: "%{count} minutes"
       x_days:
         one: "%{count} jour"
         other: "%{count} jours"
+      x_minutes:
+        one: "%{count} minute"
+        other: "%{count} minutes"
       x_months:
         one: "%{count} mois"
         other: "%{count} mois"
+      x_seconds:
+        one: "%{count} seconde"
+        other: "%{count} secondes"
       x_years:
         one: "%{count} an"
         other: "%{count} ans"
     prompts:
-      second: Seconde
-      minute: Minute
-      hour: Heure
       day: Jour
+      hour: Heure
+      minute: Minute
       month: Mois
+      second: Seconde
       year: Année
+  email: Adresse email
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -137,7 +129,7 @@ fr:
       invalid: n'est pas valide
       less_than: doit être inférieur à %{count}
       less_than_or_equal_to: doit être inférieur ou égal à %{count}
-      model_invalid: "Validation échouée : %{errors}"
+      model_invalid: 'Validation échouée : %{errors}'
       not_a_number: n'est pas un nombre
       not_an_integer: doit être un nombre entier
       odd: doit être impair
@@ -155,10 +147,11 @@ fr:
         one: ne fait pas la bonne longueur (doit comporter un seul caractère)
         other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
     template:
-      body: "Veuillez vérifier les champs suivants : "
+      body: 'Veuillez vérifier les champs suivants : '
       header:
-        one: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreur"
-        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+        one: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  forgot_password: Mot de passe oublié ?
   helpers:
     select:
       prompt: Veuillez sélectionner
@@ -166,6 +159,8 @@ fr:
       create: Créer un(e) %{model}
       submit: Enregistrer ce(tte) %{model}
       update: Modifier ce(tte) %{model}
+  login: Se connecter
+  logout: Se déconnecter
   number:
     currency:
       format:
@@ -192,9 +187,9 @@ fr:
           quadrillion: million de milliards
           thousand: millier
           trillion: billion
-          unit: ""
+          unit: ''
       format:
-        delimiter: ""
+        delimiter: ''
         precision: 3
         significant: true
         strip_insignificant_zeros: true
@@ -212,11 +207,15 @@ fr:
           tb: To
     percentage:
       format:
-        delimiter: ""
+        delimiter: ''
         format: "%n%"
     precision:
       format:
-        delimiter: ""
+        delimiter: ''
+  password: Mot de passe
+  remember_me: Se souvenir de moi
+  reset_password: Réinitialiser le mot de passe
+  sign_up: S'inscrire
   support:
     array:
       last_word_connector: " et "
