@@ -72,6 +72,8 @@ group :development do
   gem "annotate"
   gem "i18n_generators"
   gem "i18n-tasks"
+  gem "ruby-lsp"
+  gem "ruby-lsp-rails"
 end
 
 group :test do

@@ -254,6 +254,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
+    prism (0.17.1)
     propshaft (0.8.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -342,6 +343,14 @@ GEM
     rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
+    ruby-lsp (0.12.5)
+      language_server-protocol (~> 3.17.0)
+      prism (>= 0.17.1, < 0.18)
+      sorbet-runtime (>= 0.5.5685)
+    ruby-lsp-rails (0.2.7)
+      rails (>= 6.0)
+      ruby-lsp (>= 0.12.0, < 0.13.0)
+      sorbet-runtime (>= 0.5.9897)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -350,6 +359,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     smart_properties (1.17.0)
+    sorbet-runtime (0.5.11142)
     sqlite3 (1.6.8-aarch64-linux)
     sqlite3 (1.6.8-arm64-darwin)
     sqlite3 (1.6.8-x86_64-linux)
@@ -432,6 +442,8 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.1)
   redis (>= 4.0.1)
+  ruby-lsp
+  ruby-lsp-rails
   selenium-webdriver
   sqlite3 (~> 1.4)
   standardrb (~> 1.0)
