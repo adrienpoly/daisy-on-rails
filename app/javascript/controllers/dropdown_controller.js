@@ -2,7 +2,7 @@ import { Controller } from '@hotwired/stimulus'
 import { useClickOutside } from 'stimulus-use'
 
 export default class extends Controller {
-  static targets = ['summary']
+  static targets = ['summary', 'swap']
 
   connect () {
     useClickOutside(this)
@@ -22,8 +22,10 @@ export default class extends Controller {
   toggle (event) {
     if (this.element.open) {
       this.element.setAttribute('aria-expanded', true)
+      this.swapTarget.classList.add('swap-active')
     } else {
       this.element.setAttribute('aria-expanded', false)
+      this.swapTarget.classList.remove('swap-active')
     }
   }
 

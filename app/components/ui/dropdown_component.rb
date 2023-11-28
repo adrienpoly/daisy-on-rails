@@ -2,7 +2,7 @@
 
 class Ui::DropdownComponent < ApplicationComponent
   renders_many :menu_items, types: {
-    divider: Ui::DividerComponent,
+    divider: lambda { render Ui::DividerComponent.new(class: "my-2") },
     link_to: lambda { |*args, **attributes|
       content_tag :li do
         attributes[:class] = class_names("!whitespace-nowrap", attributes[:class])
@@ -16,6 +16,10 @@ class Ui::DropdownComponent < ApplicationComponent
       end
     }
   }
+
+  renders_one :toggle_open
+  renders_one :toggle_close
+
   OPEN_FROM_MAPPING = {
     left: "dropdown-left",
     right: "dropdown-right",
@@ -31,7 +35,6 @@ class Ui::DropdownComponent < ApplicationComponent
   option :hover, type: Dry::Types["strict.bool"], default: proc { false }
   option :align, type: Dry::Types["coercible.symbol"].enum(*ALIGN_MAPPING.keys), optional: true
   option :open_from, type: Dry::Types["coercible.symbol"].enum(*OPEN_FROM_MAPPING.keys), optional: true
-  option :content_classes, type: Dry::Types["coercible.string"], optional: true
 
   private
 
@@ -40,7 +43,7 @@ class Ui::DropdownComponent < ApplicationComponent
   end
 
   def classes
-    [component_classes, attributes[:class]].compact_blank.join(" ")
+    [component_classes, attributes.delete(:class)].compact_blank.join(" ")
   end
 
   def component_classes
@@ -54,6 +57,6 @@ class Ui::DropdownComponent < ApplicationComponent
   end
 
   def content_classes
-    class_names("p-2 bg-base-100 dropdown-content", attributes[:content_class])
+    class_names("menu p-2 mt-4 z-[1] rounded-lg shadow-2xl bg-base-100 dropdown-content", attributes.delete(:content_classes))
   end
 end
