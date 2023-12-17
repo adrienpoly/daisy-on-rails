@@ -18,7 +18,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should sign in" do
-    post sign_in_url, params: {email: @user.email, password: "Secret1*3*5*"}
+    post sign_in_url, params: {email: @user.email, password: "123456"}
     assert_redirected_to root_url
 
     get root_url

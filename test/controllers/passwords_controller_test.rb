@@ -11,7 +11,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update password" do
-    patch password_url, params: {password_challenge: "Secret1*3*5*", password: "Secret6*4*2*", password_confirmation: "Secret6*4*2*"}
+    patch password_url, params: {password_challenge: "123456", password: "Secret6*4*2*", password_confirmation: "Secret6*4*2*"}
     assert_redirected_to root_url
   end
 
