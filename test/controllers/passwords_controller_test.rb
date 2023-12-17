@@ -2,7 +2,7 @@ require "test_helper"
 
 class PasswordsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = sign_in_as(users(:lazaro_nixon))
+    @user = sign_in_as(users(:one))
   end
 
   test "should get edit" do

@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class Identity::PasswordResetsTest < ApplicationSystemTestCase
   setup do
-    @user = users(:lazaro_nixon)
+    @user = users(:one)
     @sid = @user.generate_token_for(:password_reset)
   end
 
