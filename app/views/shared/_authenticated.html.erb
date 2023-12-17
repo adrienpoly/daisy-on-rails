@@ -9,7 +9,7 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li>
-          <%= ui_dropdown align: :end do |c| %>
+          <%= ui_dropdown align: :end, content_classes: "mt-3", id: "navbar_toggle" do |c| %>
             <% c.with_menu_item_link_to "Mes listes", "#" %>
             <% c.with_menu_item_divider %>
             <% c.with_menu_item_button_to "Se déconnecter", Current.session, method: :delete, id: :sign_out %>
