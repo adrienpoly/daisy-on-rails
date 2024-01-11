@@ -210,6 +210,8 @@ en:
   remember_me: Remember me
   reset_password: Reset password
   sign_up: Sign up
+  sign_in: Sign in
+  login: Sign in
   support:
     array:
       last_word_connector: ", and "

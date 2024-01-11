@@ -47,7 +47,7 @@ The template includes default UI components for quick integration:
     <%= link_to t("forgot_password"), new_identity_password_reset_path, class: "link link-primary ml-auto" %>
     <%= form.ui_password_field :password, label: false, placeholder: t("password"), required: true, autocomplete: "current-password" %>
   </div>
-  <%= form.ui_submit "Se connecter", class: "mt-6", id: :sign_in %>
+  <%= form.ui_submit t("sign_in"), class: "mt-6", id: :sign_in %>
 <% end %>
 ```
 
