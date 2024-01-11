@@ -24,7 +24,7 @@ Daisy-on-Rails is a Ruby on Rails starter kit designed to quickly bootstrap your
 - **Github Actions**: Continuous integration
 - **Kamal**: basic Kamal deploy script (WIP)
 
-![Daisy on Rails template](/docs/assets/daisy-on-rails.png)
+![Daisy on Rails template](/docs/assets/daisy-on-rails-2.png)
 
 ## UI Components
 
