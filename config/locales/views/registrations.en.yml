@@ -1,0 +1,5 @@
+en:
+  registrations:
+    new:
+      title: DaisyOnRails
+      already_have_an_account: "You already have an account?"

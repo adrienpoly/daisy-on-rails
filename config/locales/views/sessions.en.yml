@@ -1,0 +1,5 @@
+en:
+  sessions:
+    new:
+      title: DaisyOnRails
+      no_account_yet: "You don't have an account yet?"
