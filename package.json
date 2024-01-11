@@ -3,7 +3,7 @@
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^7.3.0",
+    "@hotwired/turbo-rails": "8.0.0-beta.2",
     "autoprefixer": "^10.4.16",
     "esbuild": "^0.19.5",
     "postcss": "^8.4.31",
