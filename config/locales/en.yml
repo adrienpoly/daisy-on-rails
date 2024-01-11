@@ -147,6 +147,7 @@ en:
       header:
         one: "%{count} error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
+  forgot_password: Forgot your password?
   helpers:
     select:
       prompt: Please select
