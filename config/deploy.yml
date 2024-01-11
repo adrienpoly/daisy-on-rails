@@ -1,12 +1,14 @@
 # Name of your application. Used to uniquely configure containers.
-service: shopping_list
+service: daisy_on_rails
 
 # Name of the container image.
-image: adrienpoly/shopping_list
+image: adrienpoly/daisy_on_rails
 
 # Deploy to these servers.
 servers:
-  - 5.75.232.156
+  web:
+    hosts:
+      - 1.1.1.1
 
 # Credentials for your image host.
 registry:
@@ -65,15 +67,5 @@ accessories:
 #   options:
 #     publish:
 #       - 80:80
-#       - "7700:7700"
-# args:
-#   entrypoints.web.address: ":80"
-#   entrypoints.otherentrypoint.address: ":7700"
-# Configure a custom healthcheck (default is /up on port 3000)
-# healthcheck:
-#   path: /healthz
-#   port: 4000
-builder:
-  cache:
-    type: registry
-    options: mode=max,image-manifest=true,oci-mediatypes=true
+#       - "7700:7700
+
