@@ -212,6 +212,8 @@ en:
   sign_up: Sign up
   sign_in: Sign in
   login: Sign in
+  admin: Admin
+  sign_out: Sign out
   support:
     array:
       last_word_connector: ", and "

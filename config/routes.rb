@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  extend Authenticator
+
   # authentification
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
@@ -10,6 +12,10 @@ Rails.application.routes.draw do
     resource :email, only: [:edit, :update]
     resource :email_verification, only: [:show, :create]
     resource :password_reset, only: [:new, :edit, :create, :update]
+  end
+
+  authenticate :admin do
+    mount Avo::Engine, at: Avo.configuration.root_path
   end
 
   root "home#index"
