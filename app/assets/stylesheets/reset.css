@@ -1,0 +1,22 @@
+/* from https://x.com/souporserious/status/1746311121949356469?s=20 */
+
+* {
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
