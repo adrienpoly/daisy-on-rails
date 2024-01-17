@@ -8,7 +8,7 @@ class Identity::EmailsTest < ApplicationSystemTestCase
   test "updating the email" do
     visit edit_identity_email_path
 
-    fill_in "New email", with: "new_email@hey.com"
+    fill_in "New email", with: "new_email@daisy.com"
     fill_in "Password challenge", with: "123456"
     click_on "Save changes"
 
