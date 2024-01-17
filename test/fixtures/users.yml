@@ -18,20 +18,21 @@
 #
 
 one:
-  email: john@hey.com
+  email: john@daisy.com
   password_digest: <%= BCrypt::Password.create("123456") %>
   verified: true
   first_name: John
   last_name: Doe
 two:
-  email: daisy@hey.com
+  email: daisy@daisy.com
   password_digest: <%= BCrypt::Password.create("123456") %>
   verified: true
   first_name: Daisy
   last_name: Doe
 admin:
-  email: admin@hey.com
+  email: admin@daisy.com
   password_digest: <%= BCrypt::Password.create("123456") %>
   verified: true
+  admin: true
   first_name: Admin
   last_name: Doe

@@ -27,7 +27,7 @@ class Identity::PasswordResetsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not send a password reset email to a nonexistent email" do
     assert_no_enqueued_emails do
-      post identity_password_reset_url, params: {email: "invalid_email@hey.com"}
+      post identity_password_reset_url, params: {email: "invalid_email@daisy.com"}
     end
 
     assert_redirected_to new_identity_password_reset_url

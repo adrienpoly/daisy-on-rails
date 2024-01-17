@@ -164,6 +164,8 @@ fr:
   login: Se connecter
   sign_in: Se connecter
   logout: Se déconnecter
+  admin: Admin
+  sign_out: Se déconnecter
   number:
     currency:
       format:

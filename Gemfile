@@ -93,3 +93,7 @@ gem "view_component", "~> 3.7"
 gem "dry-initializer-rails"
 
 gem "dry-types", "~> 1.7"
+
+# Avo admin
+gem "avo", ">= 3.2"
+gem "ransack", "~> 4.1"
