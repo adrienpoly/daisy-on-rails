@@ -1,14 +1,12 @@
 # Name of your application. Used to uniquely configure containers.
-service: daisy_on_rails
+service: daisy-on-rails
 
 # Name of the container image.
-image: adrienpoly/daisy_on_rails
+image: adrienpoly/daisy-on-rails
 
 # Deploy to these servers.
 servers:
-  web:
-    hosts:
-      - 1.1.1.1
+  - 192.168.0.1
 
 # Credentials for your image host.
 registry:
@@ -20,15 +18,21 @@ registry:
   password:
     - KAMAL_REGISTRY_PASSWORD
 
+# persist the sqlite database and rails storage directory accross deploys
+volumes:
+  - "storage:/rails/storage"
 # Inject ENV variables into containers (secrets come from .env).
+# Remember to run `kamal env push` after making changes!
 env:
   clear:
     RUBY_YJIT_ENABLE: 1
+    RAILS_SERVE_STATIC_FILES: true
   secret:
     - RAILS_MASTER_KEY
 # Use a different ssh user than root
-ssh:
-  user: root
+# ssh:
+#   user: app
+
 # Configure builder setup.
 # builder:
 #   args:
@@ -38,15 +42,23 @@ ssh:
 #   remote:
 #     arch: amd64
 #     host: ssh://app@192.168.0.1
-volumes:
-  - "storage:/rails/storage"
+
 # Use accessory services (secrets come from .env).
-accessories:
-  # files:
-  #   - config/mysql/production.cnf:/etc/mysql/my.cnf
-  #   - db/production.sql.erb:/docker-entrypoint-initdb.d/setup.sql
-  # directories:
-  #   - data:/var/lib/mysql
+# accessories:
+#   db:
+#     image: mysql:8.0
+#     host: 192.168.0.2
+#     port: 3306
+#     env:
+#       clear:
+#         MYSQL_ROOT_HOST: '%'
+#       secret:
+#         - MYSQL_ROOT_PASSWORD
+#     files:
+#       - config/mysql/production.cnf:/etc/mysql/my.cnf
+#       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+#     directories:
+#       - data:/var/lib/mysql
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2
@@ -59,13 +71,29 @@ accessories:
 #   args:
 #     accesslog: true
 #     accesslog.format: json
-# labels:
-#   traefik.tcp.routers.other.rule: "HostSNI(`*`)"
-#   traefik.tcp.routers.other.entrypoints: search
-#   traefik.tcp.services.other.loadbalancer.server.port: 7700
-# traefik:
-#   options:
-#     publish:
-#       - 80:80
-#       - "7700:7700
 
+# Configure a custom healthcheck (default is /up on port 3000)
+# healthcheck:
+#   path: /healthz
+#   port: 4000
+
+# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
+# hitting 404 on in-flight requests. Combines all files from new and old
+# version inside the asset_path.
+asset_path: /rails/public/assets
+# Configure rolling deploys by setting a wait time between batches of restarts.
+# boot:
+#   limit: 10 # Can also specify as a percentage of total hosts, such as "25%"
+#   wait: 2
+
+# Configure the role used to determine the primary_host. This host takes
+# deploy locks, runs health checks during the deploy, and follow logs, etc.
+#
+# Caution: there's no support for role renaming yet, so be careful to cleanup
+#          the previous role on the deployed hosts.
+# primary_role: web
+
+# Controls if we abort when see a role with no hosts. Disabling this may be
+# useful for more complex deploy configurations.
+#
+# allow_empty_roles: false
