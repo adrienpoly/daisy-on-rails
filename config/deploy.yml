@@ -9,13 +9,15 @@ servers:
   web:
     hosts:
       - 5.75.232.156
-    options:
-      "add-host": host.docker.internal:host-gateway
     labels:
-      traefik.http.routers.daisy_on_rails-web.entrypoints: websecure
-      traefik.http.routers.daisy_on_rails.rule-web: Host(`daisy-on-rails.adrienpoly.com`)
-      # traefik.http.routers.rails_recipes.tls.certresolver: letsencrypt
-
+      labels:
+      traefik.http.routers.daisy_on_rails.rule: Host(`daisy-on-rails.adrienpoly.com`)
+      traefik.http.routers.daisy_on_rails_secure.entrypoints: websecure
+      traefik.http.routers.daisy_on_rails_secure.rule: Host(`daisy-on-rails.adrienpoly.com`)
+      traefik.http.routers.daisy_on_rails_secure.tls: true
+      traefik.http.routers.daisy_on_rails_secure.tls.certresolver: letsencrypt
+    options:
+      network: private
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
@@ -120,3 +122,8 @@ asset_path: /rails/public/assets
 # useful for more complex deploy configurations.
 #
 # allow_empty_roles: false
+
+builder:
+  cache:
+    type: registry
+    options: mode=max,image-manifest=true,oci-mediatypes=true
