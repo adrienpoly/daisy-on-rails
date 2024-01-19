@@ -1,12 +1,12 @@
 <h1 class="text-center mb-6"><%= t(".title") %></h1>
 
 <%= form_with(url: sign_in_path, class: "flex flex-col max-w-sm gap-6 w-full") do |form| %>
-  <%= form.ui_email_field :email, label: false, placeholder: t("email"), required: true, autofocus: true %>
+  <%= form.ui_email_field :email, tabindex: 1, label: false, placeholder: t("email"), required: true, autofocus: true %>
   <div class="flex flex-col gap-1">
-    <%= link_to t("forgot_password"), new_identity_password_reset_path, class: "link link-primary ml-auto" %>
-    <%= form.ui_password_field :password, label: false, placeholder: t("password"), required: true, autocomplete: "current-password" %>
+    <%= link_to t("forgot_password"), new_identity_password_reset_path, tabindex: 3, class: "link link-primary ml-auto" %>
+    <%= form.ui_password_field :password, tabindex: 2, label: false, placeholder: t("password"), required: true, autocomplete: "current-password" %>
   </div>
-  <%= form.ui_submit t("sign_in"), class: "mt-6", id: :sign_in %>
+  <%= form.ui_submit t("sign_in"), tabindex: 4, class: "mt-6", id: :sign_in %>
 <% end %>
 
 <div class="mt-4">
