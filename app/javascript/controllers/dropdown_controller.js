@@ -10,6 +10,7 @@ export default class extends Controller {
   }
 
   disconnect () {
+    this.#close()
     this.element.removeEventListener('toggle', this.toggle)
   }
 
