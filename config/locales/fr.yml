@@ -160,6 +160,9 @@ fr:
       update: Modifier ce(tte) %{model}
   login: Se connecter
   logout: Se déconnecter
+  navbar:
+    sessions: Sessions
+    password: Mot de passe
   number:
     currency:
       format:

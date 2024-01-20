@@ -11,7 +11,8 @@
         <li>
           <%= ui_dropdown align: :end, content_classes: "mt-3", id: "navbar_toggle" do |c| %>
             <% c.with_menu_item_link_to t("admin"), avo_path, display: Current.user&.admin? %>
-            <% c.with_menu_item_link_to t("sessions"), user_sessions_path %>
+            <% c.with_menu_item_link_to t("navbar.sessions"), user_sessions_path %>
+            <% c.with_menu_item_link_to t("navbar.password"), edit_password_path %>
             <% c.with_menu_item_divider %>
             <% c.with_menu_item_button_to t("sign_out"), Current.session, method: :delete, id: :sign_out %>
             <% c.with_toggle_open do %>

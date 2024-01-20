@@ -8,10 +8,10 @@ class PasswordsTest < ApplicationSystemTestCase
   test "updating the password" do
     visit edit_password_path
 
-    fill_in "Password challenge", with: "123456"
+    fill_in "Current password", with: "123456"
     fill_in "New password", with: "Secret6*4*2*"
     fill_in "Confirm new password", with: "Secret6*4*2*"
-    click_on "Save changes"
+    click_on "Update"
 
     assert_text "Your password has been changed"
   end

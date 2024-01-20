@@ -1,30 +1,30 @@
-<div class="container text-center mt-8">
-  <%= ui_back_to t("dashboard"), user_dashboard_path %>
+<div class="container">
+  <%= ui_back_to t("dashboard"), user_dashboard_path, class: "mb-8" %>
 
-  <h1 class="text-center">Devices & Sessions</h1>
+  <h1 class="text-center mb-8">Devices & Sessions</h1>
 
   <div id="sessions">
     <% @sessions.each do |session| %>
-      <div id="<%= dom_id session %>">
-        <p>
-          <strong>User Agent:</strong>
-          <%= session.user_agent %>
-        </p>
+      <%= tag.div id: dom_id(session) do %>
+        <div class="flex items-center gap-4">
+          <div class="flex flex-col gap-4">
+            <div class="div">
+              <strong>User Agent:</strong>
+              <%= session.user_agent %>
+            </div>
 
-        <p>
-          <strong>Ip Address:</strong>
-          <%= session.ip_address %>
-        </p>
-
-        <p>
-          <strong>Created at:</strong>
-          <%= session.created_at %>
-        </p>
-
-      </div>
-      <p>
-        <%= button_to "Log out", session, method: :delete %>
-      </p>
+            <div>
+              <strong>Ip Address:</strong>
+              <%= session.ip_address %>
+            </div>
+            <div>
+              <strong>Created at:</strong>
+              <%= l(session.created_at.to_date, default: "", format: :long) %>
+            </div>
+          </div>
+          <%= ui_button "Log out", session, method: :delete, kind: :error, outline: true %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

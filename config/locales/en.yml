@@ -157,6 +157,9 @@ en:
       submit: Save %{model}
       update: Update %{model}
   login: Sign in
+  navbar:
+    sessions: Sessions
+    password: Password
   number:
     currency:
       format:

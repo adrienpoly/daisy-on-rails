@@ -1,5 +1,5 @@
 class PasswordsController < ApplicationController
-  layout "authentification"
+  # layout "authentification"
 
   before_action :set_user
 
@@ -8,7 +8,7 @@ class PasswordsController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, notice: "Your password has been changed"
+      redirect_to user_dashboard_path, notice: "Your password has been changed"
     else
       render :edit, status: :unprocessable_entity
     end
