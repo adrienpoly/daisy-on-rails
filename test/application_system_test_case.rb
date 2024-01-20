@@ -9,7 +9,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     fill_in :password, with: "123456"
     click_on "sign_in"
 
-    assert_current_path root_url
+    assert_current_path user_dashboard_url
     user
   end
 end

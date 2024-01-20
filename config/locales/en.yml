@@ -7,6 +7,7 @@ en:
         restrict_dependent_destroy:
           has_many: Cannot delete record because dependent %{record} exist
           has_one: Cannot delete record because a dependent %{record} exists
+  admin: Admin
   cancel: Cancel
   date:
     abbr_day_names:
@@ -155,6 +156,7 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+  login: Sign in
   number:
     currency:
       format:
@@ -209,11 +211,9 @@ en:
   password: Password
   remember_me: Remember me
   reset_password: Reset password
-  sign_up: Sign up
   sign_in: Sign in
-  login: Sign in
-  admin: Admin
   sign_out: Sign out
+  sign_up: Sign up
   support:
     array:
       last_word_connector: ", and "

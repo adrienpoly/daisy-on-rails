@@ -5,12 +5,9 @@ fr:
       messages:
         record_invalid: "La validation a échoué : %{errors}"
         restrict_dependent_destroy:
-          has_many:
-            Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
-            dépendants existent
-          has_one:
-            Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
-            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe
+  admin: Admin
   cancel: Annuler
   date:
     abbr_day_names:
@@ -162,10 +159,7 @@ fr:
       submit: Enregistrer ce(tte) %{model}
       update: Modifier ce(tte) %{model}
   login: Se connecter
-  sign_in: Se connecter
   logout: Se déconnecter
-  admin: Admin
-  sign_out: Se déconnecter
   number:
     currency:
       format:
@@ -220,6 +214,8 @@ fr:
   password: Mot de passe
   remember_me: Se souvenir de moi
   reset_password: Réinitialiser le mot de passe
+  sign_in: Se connecter
+  sign_out: Se déconnecter
   sign_up: S'inscrire
   support:
     array:
