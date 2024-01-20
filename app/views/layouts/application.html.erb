@@ -10,5 +10,6 @@
       <%= yield %>
     </div>
     <%= render "shared/flashes" %>
+    <%= turbo_stream_from Current.user if Current.user %>
   </body>
 </html>
