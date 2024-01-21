@@ -6,8 +6,11 @@
 
   <body class="min-h-[100vh-4rem]">
     <%= render "shared/navbar" %>
-    <%= yield %>
+    <div class="container mt-8 mb-20 prose">
+      <h1 class="text-center mb-8"><%= current_page.data.title %></h1>
+      <%= yield %>
+    </div>
+
     <%= render "shared/flashes" %>
-    <%= turbo_stream_from Current.user if Current.user %>
   </body>
 </html>

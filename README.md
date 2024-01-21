@@ -2,7 +2,15 @@
 
 ## Introduction
 
-Daisy-on-Rails is a Ruby on Rails starter kit designed to quickly bootstrap your new app with a modern and efficient stack. This template integrates several key technologies and tools to provide a comprehensive starting point for Rails developers.
+Daisy-on-Rails is a Ruby on Rails starter kit designed to bootstrap your new app with a modern Rails stack.
+
+**Keep it simple**
+
+The primary goal of Daisy-on-Rails is to offer a starter kit that accelerates the process of getting a new Rails application up and running with a modern tech stack and the base feature you need to quickly test a project.
+
+It started as a recuring need to bootstrap new projects with a modern stack and a set of tools that I like to use. They are several other **great** Rails templates out there such as Jumpstart, Suspenders, Bullet train. They all offer much more features. The goal of Daisy-on-Rails is to remain simple and minimalistic.
+
+For more feature rich template check out [Jumpstart](https://jumpstartrails.com/), [Bullet Train](https://bullettrain.co/) or [Business Class](https://businessclasskit.com/)
 
 ## Technology Stack
 
@@ -14,13 +22,14 @@ Daisy-on-Rails is a Ruby on Rails starter kit designed to quickly bootstrap your
 - **Authentication**: Implemented with Authentication-zero.
 - **Admin Interface**: Utilizing AVO for easy admin panel creation. (WIP)
 - **Propshaft**: A modern replacement for Sprockets to handle assets.
-- **Sitepress**: Static pages and blog (WIP)
+- **Sitepress**: Static pages and blog
 
 ## Development Tools
 
 - **Standard**: Code style enforcement for Ruby and JavaScript.
 - **ERB Lint**: Linter for ERB templates.
 - **Livereload**: Enables live reloading of web pages as you code.
+- **Minitest**: A fast, easy-to-use testing framework for Ruby.
 - **Github Actions**: Continuous integration
 - **Kamal**: basic Kamal deploy script (WIP)
 
@@ -60,11 +69,6 @@ Easily customize the theme using Daisy UI's theme settings to align with your pr
 ## Generators
 
 This starter kit includes custom generators that use the built-in components, streamlining the development process.
-
-## Goal
-
-The primary goal of Daisy-on-Rails is to offer a starter kit that accelerates the process of getting a new Rails application up and running with a modern tech stack. It will remain a modest template withthe basics.
-for more feature rich template check out [Jumpstart](https://jumpstartrails.com/), [Bullet Train](https://bullettrain.co/) or [Business Class](https://businessclasskit.com/)
 
 ## Usage
 

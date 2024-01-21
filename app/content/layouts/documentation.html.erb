@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/head" %>
+  </head>
+
+  <body>
+    <%= render "shared/navbar" %>
+    <div class="pt-16 container prose">
+      <%= ui_back_to t("documentations.back_to"), page_path(:documentations), class: "mb-4" %>
+
+      <%= yield %>
+    </div>
+    <%= render "shared/flashes" %>
+  </body>
+</html>

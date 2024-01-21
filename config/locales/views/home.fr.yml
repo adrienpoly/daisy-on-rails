@@ -1,0 +1,6 @@
+fr:
+  home:
+    show:
+      title: Daisy on Rails
+      subtitle: Un template Ruby on Rails moderne avec des composants DaisyUI
+      cta_text: Démarrer avec Daisy on Rails

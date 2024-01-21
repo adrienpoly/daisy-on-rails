@@ -10,4 +10,37 @@
   h3 {
     @apply text-xl font-semibold;
   }
+
+  @media (min-width: 640px) {
+    .prose {
+      max-width: 640px;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  /* override Tailwind prose clase max-width to have the same width as the container class */
+  @media (min-width: 768px) {
+    .prose {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .prose {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .prose {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .prose {
+      max-width: 1536px;
+    }
+  }
 }

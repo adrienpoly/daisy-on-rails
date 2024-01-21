@@ -1,0 +1,24 @@
+<div class="container mt-8">
+  <div class="flex flex-col items-center gap-4 text-center mb-16">
+    <h1><%= t("documentations.title") %></h1>
+    <p><%= t("documentations.subtitle") %></p>
+  </div>
+  <ul class="max-w-3xl mx-auto">
+    <% DocumentationPage.for_tag(params[:tag]).each do |page| %>
+      <li class="py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center flex-wrap gap-2">
+              <% page.tags.each do |tag| %>
+                <%= link_to tag, page_path(:documentations, tag: tag), class: "badge badge-accent badge-outline" %>
+              <% end %>
+            </div>
+            <%= link_to page.title, page.request_path, class: "link link-secondary text-xl mb-4" %>
+            <p><%= page.description %></p>
+            <%= link_to t("documentations.read_more"), page.request_path %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
