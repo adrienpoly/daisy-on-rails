@@ -8,9 +8,9 @@ Daisy-on-Rails is a Ruby on Rails starter kit designed to bootstrap your new app
 
 The primary goal of Daisy-on-Rails is to offer a starter kit that accelerates the process of getting a new Rails application up and running with a modern tech stack and the base feature you need to quickly test a project.
 
-It started as a recuring need to bootstrap new projects with a modern stack and a set of tools that I like to use. They are several other **great** Rails templates out there such as Jumpstart, Suspenders, Bullet train. They all offer much more features. The goal of Daisy-on-Rails is to remain simple and minimalistic.
+It started as a recuring need to bootstrap new projects with a modern stack and a set of tools that I like to use. The goal of Daisy-on-Rails is to remain simple and minimalistic.
 
-For more feature rich template check out [Jumpstart](https://jumpstartrails.com/), [Bullet Train](https://bullettrain.co/) or [Business Class](https://businessclasskit.com/)
+If you are looking for a feature rich tempalte with payments, Team etc check out [Jumpstart](https://jumpstartrails.com/), [Bullet Train](https://bullettrain.co/) or [Business Class](https://businessclasskit.com/)
 
 ## Technology Stack
 
