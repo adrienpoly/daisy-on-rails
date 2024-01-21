@@ -33,7 +33,7 @@ For more feature rich template check out [Jumpstart](https://jumpstartrails.com/
 - **Github Actions**: Continuous integration
 - **Kamal**: basic Kamal deploy script (WIP)
 
-![Daisy on Rails template](/docs/assets/daisy-on-rails-2.png)
+![CleanShot 2024-01-21 at 16 18 59@2x](https://github.com/adrienpoly/daisy-on-rails/assets/7847244/7d8b437a-f2e1-4523-a986-e2601ed5a2a7)
 
 ## UI Components
 
