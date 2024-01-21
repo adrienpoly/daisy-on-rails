@@ -104,3 +104,5 @@ gem "litestack", "~> 0.4.2"
 gem "sitepress-rails", "~> 4.0"
 gem "markdown-rails", "~> 2.1"
 gem "rouge", "~> 4.2"
+
+gem "ahoy_matey"

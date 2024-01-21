@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :sign_in?
 
   include Internationalization
+  include Analytics
 
   def sign_in?
     authenticate.is_a?(Session)
