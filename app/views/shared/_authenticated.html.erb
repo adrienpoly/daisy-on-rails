@@ -6,6 +6,14 @@
 
   </div>
   <div class="navbar-end">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <%= link_to t("about"), page_path(:about), class: "hidden md:block" %>
+      </li>
+      <li>
+        <%= link_to t("documentations.navbar_title"), page_path(:documentations), class: "hidden md:block" %>
+      </li>
+    </ul>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li>

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   layout "authentification"
   before_action :redirect_if_signed_in, only: %i[new]
 
-  skip_before_action :authenticate, only: %i[new create]
+  skip_before_action :authenticate!, only: %i[new create]
 
   before_action :set_session, only: :destroy
 

@@ -1,14 +1,22 @@
-<div class="navbar bg-white shadow">
-  <div class="navbar-start">
+<div class="navbar shadow px-4">
+  <div class="justify-start">
     <%= ui_button url: root_path, kind: :ghost do %>
-      <%= heroicon "shopping-bag", options: {class: "h-8 w-8 fill-primary"} %>
+      DaisyOnRails
     <% end %>
   </div>
-
-  <div class="navbar-end">
+  <div class="flex-grow"></div>
+  <div class="justify-end gap-4">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <%= link_to t("about"), page_path(:about), class: "hidden md:block" %>
+      </li>
+      <li>
+        <%= link_to t("documentations.navbar_title"), page_path(:documentations), class: "hidden md:block" %>
+      </li>
+    </ul>
     <div class="flex gap-4 items-center">
-      <%= link_to t("sign_up"), sign_up_path, class: "btn btn-primary btn-outline" %>
-      <%= link_to t("login"), sign_in_path, class: "btn btn-primary" %>
+      <%= ui_button t("sign_up"), url: sign_up_path, kind: :primary, outline: true %>
+      <%= ui_button t("login"), url: sign_in_path, kind: :primary %>
     </div>
   </div>
 </div>
