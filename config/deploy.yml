@@ -37,6 +37,8 @@ env:
   clear:
     RUBY_YJIT_ENABLE: 1
     RAILS_SERVE_STATIC_FILES: true
+    WEB_CONCURRENCY: 1
+    RAILS_MAX_THREADS: 3
   secret:
     - RAILS_MASTER_KEY
 # Use a different ssh user than root
