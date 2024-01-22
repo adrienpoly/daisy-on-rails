@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   authenticate :admin do
     mount Avo::Engine, at: Avo.configuration.root_path
+    mount Blazer::Engine, at: "blazer"
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
