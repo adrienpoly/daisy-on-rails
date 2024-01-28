@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_22_061850) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_28_210010) do
   create_table "ahoy_events", force: :cascade do |t|
     t.integer "visit_id"
     t.integer "user_id"
@@ -118,6 +118,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_22_061850) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "solid_errors", force: :cascade do |t|
+    t.string "exception_class", null: false
+    t.string "message", null: false
+    t.string "severity", null: false
+    t.string "source"
+    t.datetime "resolved_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exception_class", "message", "severity", "source"], name: "solid_error_uniqueness_index", unique: true
+    t.index ["resolved_at"], name: "index_solid_errors_on_resolved_at"
+  end
+
+  create_table "solid_errors_occurrences", force: :cascade do |t|
+    t.integer "error_id", null: false
+    t.text "backtrace"
+    t.json "context"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["error_id"], name: "index_solid_errors_occurrences_on_error_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -131,4 +152,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_22_061850) do
   end
 
   add_foreign_key "sessions", "users"
+  add_foreign_key "solid_errors_occurrences", "solid_errors", column: "error_id"
 end

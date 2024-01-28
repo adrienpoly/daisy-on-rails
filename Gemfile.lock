@@ -454,6 +454,8 @@ GEM
       sitepress-core (= 4.0.2)
       sprockets-rails (>= 2.0.0)
     smart_properties (1.17.0)
+    solid_errors (0.3.3)
+      rails (~> 7.0)
     sorbet-runtime (0.5.11200)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -568,6 +570,7 @@ DEPENDENCIES
   ruby-lsp-rails
   selenium-webdriver
   sitepress-rails (~> 4.0)
+  solid_errors (~> 0.3.3)
   sqlite3 (~> 1.4)
   standardrb (~> 1.0)
   stimulus-rails
