@@ -15,7 +15,7 @@ class CreateSolidErrorsTables < ActiveRecord::Migration[7.1]
     end
 
     create_table :solid_errors_occurrences do |t|
-      t.belongs_to :error, null: false, foreign_key: { to_table: :solid_errors }
+      t.belongs_to :error, null: false, foreign_key: {to_table: :solid_errors}
       t.text :backtrace
       t.json :context
 
