@@ -108,3 +108,5 @@ gem "rouge", "~> 4.2"
 # analytics
 gem "ahoy_matey"
 gem "blazer"
+
+gem "solid_errors", "~> 0.3.3"
