@@ -15,7 +15,6 @@ fr:
         email: E-mail #g
         first_name: Prénom #g
         last_name: Nom de famille #g
-        lists: Listes #g
         password_digest: Résumé du mot de passe #g
         sessions: Séances #g
         verified: Vérifié #g

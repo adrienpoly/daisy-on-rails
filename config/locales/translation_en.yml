@@ -15,7 +15,6 @@ en:
         email: Email #g
         first_name: First name #g
         last_name: Last name #g
-        lists: Lists #g
         password_digest: Password digest #g
         sessions: Sessions #g
         verified: Verified #g
