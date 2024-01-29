@@ -40,4 +40,8 @@ class User < ApplicationRecord
   after_update if: :password_digest_previously_changed? do
     sessions.where.not(id: Current.session).delete_all
   end
+
+  def name_for_admin
+    [first_name, last_name, "(#{email})"].join(" ")
+  end
 end

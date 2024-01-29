@@ -1,5 +1,5 @@
 class Avo::Resources::User < Avo::BaseResource
-  self.title = :admin_title
+  self.title = :name_for_admin
   self.includes = []
   self.search = {
     query: -> { query.ransack(email_cont: params[:q], id_eq: params[:q], m: "or").result(distinct: true) }
