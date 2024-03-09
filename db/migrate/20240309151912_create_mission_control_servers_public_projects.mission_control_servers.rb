@@ -2,7 +2,7 @@
 class CreateMissionControlServersPublicProjects < ActiveRecord::Migration[7.1]
   def change
     create_table :mission_control_servers_public_projects do |t|
-      t.belongs_to :project, null: false, foreign_key: { to_table: :mission_control_servers_projects }
+      t.belongs_to :project, null: false, foreign_key: {to_table: :mission_control_servers_projects}
       t.string :name
       t.string :token
 
