@@ -11,11 +11,12 @@ servers:
       - 5.75.232.156
     labels:
       labels:
+      traefik.http.routers.daisy_on_rails.entrypoints: web
       traefik.http.routers.daisy_on_rails.rule: Host(`daisy-on-rails.adrienpoly.com`)
-      traefik.http.routers.daisy_on_rails_secure.entrypoints: websecure
-      traefik.http.routers.daisy_on_rails_secure.rule: Host(`daisy-on-rails.adrienpoly.com`)
-      traefik.http.routers.daisy_on_rails_secure.tls: true
-      traefik.http.routers.daisy_on_rails_secure.tls.certresolver: letsencrypt
+      # traefik.http.routers.daisy_on_rails_secure.entrypoints: websecure
+      # traefik.http.routers.daisy_on_rails_secure.rule: Host(`daisy-on-rails.adrienpoly.com`)
+      # traefik.http.routers.daisy_on_rails_secure.tls: true
+      # traefik.http.routers.daisy_on_rails_secure.tls.certresolver: letsencrypt
     options:
       network: private
       memory: 512m
