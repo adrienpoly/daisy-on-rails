@@ -232,6 +232,10 @@ GEM
     i18n_generators (2.2.2)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
+    importmap-rails (2.0.1)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     inline_svg (1.9.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
@@ -295,6 +299,12 @@ GEM
     mime-types-data (3.2023.1205)
     mini_mime (1.1.5)
     minitest (5.22.2)
+    mission_control-servers (0.3.3)
+      importmap-rails
+      rails (>= 7.0.0)
+      stimulus-rails
+      tailwindcss-rails
+      turbo-rails
     msgpack (1.7.2)
     multi_xml (0.6.0)
     mutex_m (0.2.0)
@@ -490,6 +500,18 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
+    tailwindcss-rails (2.3.0)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.3.0-aarch64-linux)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.3.0-arm-linux)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.3.0-arm64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.3.0-x86_64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.3.0-x86_64-linux)
+      railties (>= 6.0.0)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.3.1)
@@ -558,6 +580,7 @@ DEPENDENCIES
   litestack (~> 0.4.2)
   magic_test!
   markdown-rails (~> 2.1)
+  mission_control-servers (~> 0.3.3)
   propshaft
   puma (>= 5.0)
   rails (~> 7.1.1)

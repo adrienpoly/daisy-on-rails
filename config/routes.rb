@@ -16,10 +16,13 @@ Rails.application.routes.draw do
     resource :password_reset, only: [:new, :edit, :create, :update]
   end
 
+  MissionControl::Servers::RoutingHelpers.add_public_routes_helper(self, "servers")
+
   authenticate :admin do
     mount Avo::Engine, at: Avo.configuration.root_path
     mount Blazer::Engine, at: "blazer"
     mount SolidErrors::Engine, at: "/solid_errors"
+    mount MissionControl::Servers::Engine => "servers"
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
