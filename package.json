@@ -4,9 +4,6 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "8.0.0-beta.2",
-    "autoprefixer": "^10.4.16",
-    "esbuild": "^0.19.5",
-    "postcss": "^8.4.31",
     "stimulus-use": "^0.52.1"
   },
   "scripts": {
@@ -16,7 +13,10 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
-    "daisyui": "^4.6.0",
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^4.7.3",
+    "esbuild": "^0.19.5",
+    "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
     "standard": "^17.1.0",
