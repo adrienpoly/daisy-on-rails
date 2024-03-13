@@ -232,6 +232,10 @@ GEM
     i18n_generators (2.2.2)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
+    importmap-rails (2.0.1)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     inline_svg (1.9.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
@@ -295,6 +299,11 @@ GEM
     mime-types-data (3.2023.1205)
     mini_mime (1.1.5)
     minitest (5.22.2)
+    mission_control-jobs (0.1.1)
+      importmap-rails
+      rails (~> 7.1)
+      stimulus-rails
+      turbo-rails
     msgpack (1.7.2)
     multi_xml (0.6.0)
     mutex_m (0.2.0)
@@ -560,6 +569,7 @@ DEPENDENCIES
   litestack (~> 0.4.2)
   magic_test!
   markdown-rails (~> 2.1)
+  mission_control-jobs (~> 0.1.1)
   propshaft
   puma (>= 5.0)
   rails (~> 7.1.1)
