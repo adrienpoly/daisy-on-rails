@@ -454,6 +454,8 @@ GEM
     smart_properties (1.17.0)
     solid_errors (0.3.5)
       rails (~> 7.0)
+    solid_queue (0.2.2)
+      rails (~> 7.1)
     sorbet-runtime (0.5.11200)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -569,6 +571,7 @@ DEPENDENCIES
   selenium-webdriver
   sitepress-rails (~> 4.0)
   solid_errors
+  solid_queue (~> 0.2.2)
   sqlite3 (~> 1.4)
   standardrb (~> 1.0)
   stimulus-rails

@@ -110,3 +110,5 @@ gem "ahoy_matey"
 gem "blazer"
 
 gem "solid_errors"
+
+gem "solid_queue", "~> 0.2.2"
