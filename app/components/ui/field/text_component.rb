@@ -4,13 +4,13 @@ class Ui::Field::TextComponent < ApplicationComponent
   renders_one :top_right_label
 
   param :name, optional: true
-  option :form_builder, type: Dry::Types['nominal.any'], optional: true
-  option :label, type: Dry::Types['strict.false'] | Dry::Types['coercible.string'], optional: true
-  option :error, type: Dry::Types['coercible.string'], optional: true
-  option :hint, type: Dry::Types['coercible.string'], optional: true
-  option :value, type: Dry::Types['coercible.string'], optional: true
-  option :class, type: Dry::Types['coercible.string'], optional: true
-  option :wrapper_class, type: Dry::Types['coercible.string'], optional: true
+  option :form_builder, type: Dry::Types["nominal.any"], optional: true
+  option :label, type: Dry::Types["strict.false"] | Dry::Types["coercible.string"], optional: true
+  option :error, type: Dry::Types["coercible.string"], optional: true
+  option :hint, type: Dry::Types["coercible.string"], optional: true
+  option :value, type: Dry::Types["coercible.string"], optional: true
+  option :class, type: Dry::Types["coercible.string"], optional: true
+  option :wrapper_class, type: Dry::Types["coercible.string"], optional: true
 
   private
 
@@ -22,11 +22,11 @@ class Ui::Field::TextComponent < ApplicationComponent
 
   def field_classes
     classes = attributes.delete(:class)
-    [class_names('input input-bordered w-full', "input-error": errors), classes].compact.join(' ')
+    [class_names("input input-bordered w-full", "input-error": errors), classes].compact.join(" ")
   end
 
   def wrapper_classes
-    attributes.delete(:wrapper_class)
+    # attributes.delete(:wrapper_class)
   end
 
   def errors
