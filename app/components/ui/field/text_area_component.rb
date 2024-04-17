@@ -9,7 +9,6 @@ class Ui::Field::TextAreaComponent < ApplicationComponent
   option :error, type: Dry::Types["coercible.string"], optional: true
   option :hint, type: Dry::Types["coercible.string"], optional: true
   option :value, type: Dry::Types["coercible.string"], optional: true
-  option :class, type: Dry::Types["coercible.string"], optional: true
   option :wrapper_class, type: Dry::Types["coercible.string"], optional: true
 
   private
