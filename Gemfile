@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby "3.2.0"
+ruby "3.3.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.1"
+gem "rails", "~> 7.1.3.2"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
@@ -98,7 +98,7 @@ gem "dry-types", "~> 1.7"
 gem "avo", ">= 3.2"
 gem "ransack", "~> 4.1"
 
-gem "litestack", "~> 0.4.2"
+gem 'activerecord-enhancedsqlite3-adapter'
 
 # sitepress
 gem "sitepress-rails", "~> 4.0"

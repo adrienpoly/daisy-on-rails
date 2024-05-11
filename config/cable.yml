@@ -1,11 +1,11 @@
 development:
-  adapter: litecable
+  adapter: async
 
 test:
-  adapter: litecable
+  adapter: async
 
 staging:
-  adapter: litecable
+  adapter: async
 
 production:
-  adapter: litecable
+  adapter: async
