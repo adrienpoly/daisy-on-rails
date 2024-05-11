@@ -19,8 +19,6 @@ servers:
       # traefik.http.routers.daisy_on_rails_secure.tls.certresolver: letsencrypt
     options:
       network: private
-      memory: 512m
-      cpus: 0.8
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
