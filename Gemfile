@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.3.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.3.2"
+gem "rails", github: "rails/rails", branch: "main"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
@@ -51,7 +51,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug"
   gem "debug", platforms: %i[mri windows]
-  gem "standardrb", "~> 1.0"
+  gem "standard", ">= 1.35.1"
   gem "erb_lint"
 
   gem "kamal"
@@ -98,7 +98,7 @@ gem "dry-types", "~> 1.7"
 gem "avo", ">= 3.2"
 gem "ransack", "~> 4.1"
 
-gem 'activerecord-enhancedsqlite3-adapter'
+gem "activerecord-enhancedsqlite3-adapter"
 
 # sitepress
 gem "sitepress-rails", "~> 4.0"
