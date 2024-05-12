@@ -109,46 +109,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_05_12_061715) do
     t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
   end
 
-  create_table "mission_control_servers_projects", force: :cascade do |t|
-    t.string "title"
-    t.string "token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["token"], name: "index_mission_control_servers_projects_on_token", unique: true
-  end
-
-  create_table "mission_control_servers_public_projects", force: :cascade do |t|
-    t.integer "project_id", null: false
-    t.string "name"
-    t.string "token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_mission_control_servers_public_projects_on_project_id"
-    t.index ["token"], name: "index_mission_control_servers_public_projects_on_token", unique: true
-  end
-
-  create_table "mission_control_servers_service_settings", force: :cascade do |t|
-    t.integer "project_id", null: false
-    t.string "hostname"
-    t.string "label"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_mission_control_servers_service_settings_on_project_id"
-  end
-
-  create_table "mission_control_servers_services", force: :cascade do |t|
-    t.integer "project_id", null: false
-    t.string "hostname", null: false
-    t.decimal "cpu", precision: 8, scale: 2
-    t.decimal "mem_used", precision: 8, scale: 2
-    t.decimal "mem_free", precision: 8, scale: 2
-    t.string "disk_free"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["hostname"], name: "index_mission_control_servers_services_on_hostname"
-    t.index ["project_id"], name: "index_mission_control_servers_services_on_project_id"
-  end
-
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "user_agent"
@@ -156,18 +116,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_05_12_061715) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sessions_on_user_id"
-  end
-
-  create_table "solid_cache_entries", force: :cascade do |t|
-    t.binary "key", limit: 1024, null: false
-    t.binary "value", limit: 536870912, null: false
-    t.datetime "created_at", null: false
-    t.integer "key_hash", limit: 8, null: false
-    t.integer "byte_size", limit: 4, null: false
-    t.index ["byte_size"], name: "index_solid_cache_entries_on_byte_size"
-    t.index ["key"], name: "index_solid_cache_entries_on_key", unique: true
-    t.index ["key_hash", "byte_size"], name: "index_solid_cache_entries_on_key_hash_and_byte_size"
-    t.index ["key_hash"], name: "index_solid_cache_entries_on_key_hash", unique: true
   end
 
   create_table "solid_errors", force: :cascade do |t|
@@ -297,9 +245,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_05_12_061715) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "mission_control_servers_public_projects", "mission_control_servers_projects", column: "project_id"
-  add_foreign_key "mission_control_servers_service_settings", "mission_control_servers_projects", column: "project_id"
-  add_foreign_key "mission_control_servers_services", "mission_control_servers_projects", column: "project_id"
   add_foreign_key "sessions", "users"
   add_foreign_key "solid_errors_occurrences", "solid_errors", column: "error_id"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade

@@ -32,8 +32,8 @@ module Authenticator
     user: UserConstraint
   }
 
-  def authenticate(role, &block)
-    constraints(constraint_for(role), &block)
+  def authenticate(role, &)
+    constraints(constraint_for(role), &)
   end
 
   private

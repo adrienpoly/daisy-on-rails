@@ -49,8 +49,7 @@ class ApplicationMarkdown < MarkdownRails::Renderer::Rails
       width: 560,
       height: 325,
       allow: "encrypted-media; picture-in-picture",
-      allowfullscreen: true \
-        do
+      allowfullscreen: true do
       alt
     end
   end
