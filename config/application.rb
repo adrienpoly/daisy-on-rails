@@ -23,5 +23,18 @@ module DaisyOnRails
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Use Solid Queue as the Active Job backend
+    config.active_job.queue_adapter = :solid_queue
+    config.solid_queue.connects_to = {database: {writing: :queue, reading: :queue}}
+
+    # Use Solid Cache Store as the cache store
+    config.cache_store = :solid_cache_store
+
+    # Use a separate database for error monitoring
+    config.solid_errors.connects_to = {database: {writing: :errors, reading: :errors}}
+    # config.solid_errors.send_emails = true
+    # config.solid_errors.email_from = "errors@hello.com"
+    # config.solid_errors.email_to = "me@hello.com"
   end
 end

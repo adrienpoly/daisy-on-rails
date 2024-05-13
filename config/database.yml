@@ -4,22 +4,56 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem "sqlite3"
 #
+# DEFAULT CONNECTION CONFIGURATION
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
-development:
+# DATABASE CONFIGURATIONS
+primary: &primary
   <<: *default
-  database: storage/development.sqlite3
+  database: storage/<%= Rails.env %>.sqlite3
+
+queue: &queue
+  <<: *default
+  migrations_paths: db/queue_migrate
+  database: storage/<%= Rails.env %>-queue.sqlite3
+
+cache: &cache
+  <<: *default
+  migrations_paths: db/cache_migrate
+  database: storage/<%= Rails.env %>-cache.sqlite3
+
+errors: &errors
+  <<: *default
+  migrations_paths: db/errors_migrate
+  database: storage/<%= Rails.env %>-errors.sqlite3
+
+# ENVIRONMENT CONFIGURATIONS
+development:
+  primary: *primary
+  queue: *queue
+  cache: *cache
+  errors: *errors
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: storage/test.sqlite3
+  primary: *primary
+  queue: *queue
+  cache: *cache
+  errors: *errors
 
+# SQLite3 write its data on the local filesystem, as such it requires
+# persistent disks. If you are deploying to a managed service, you should
+# make sure it provides disk persistence, as many don't.
+#
+# Similarly, if you deploy your application as a Docker container, you must
+# ensure the database is located in a persisted volume.
 production:
-  <<: *default
-  database: storage/production.sqlite3
+  primary: *primary
+  queue: *queue
+  cache: *cache
+  errors: *errors
