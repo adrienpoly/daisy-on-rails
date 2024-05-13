@@ -8,13 +8,13 @@ class CreateSolidErrorsTables < ActiveRecord::Migration[7.2]
       t.text :severity, null: false
       t.text :source
       t.datetime :resolved_at, index: true
-      t.string :fingerprint, null: false, limit: 64, index: { unique: true }
+      t.string :fingerprint, null: false, limit: 64, index: {unique: true}
 
       t.timestamps
     end
 
     create_table :solid_errors_occurrences do |t|
-      t.belongs_to :error, null: false, foreign_key: { to_table: :solid_errors }
+      t.belongs_to :error, null: false, foreign_key: {to_table: :solid_errors}
       t.text :backtrace
       t.json :context
 
