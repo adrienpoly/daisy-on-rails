@@ -99,6 +99,7 @@ gem "avo", ">= 3.2"
 gem "ransack", "~> 4.1"
 
 gem "activerecord-enhancedsqlite3-adapter"
+gem "litestream", "~> 0.10.1"
 
 # sitepress
 gem "sitepress-rails", "~> 4.0"
@@ -111,6 +112,8 @@ gem "blazer"
 
 gem "solid_errors"
 
-gem "solid_queue", "~> 0.2.2"
+gem "solid_cache"
+
+gem "solid_queue", github: "rails/solid_queue", branch: "main"
 
 gem "mission_control-jobs", "~> 0.1.1"
