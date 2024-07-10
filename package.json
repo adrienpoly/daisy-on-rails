@@ -3,7 +3,7 @@
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "8.0.0-beta.2",
+    "@hotwired/turbo-rails": "^8.0.4",
     "stimulus-use": "^0.52.1"
   },
   "scripts": {
