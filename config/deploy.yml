@@ -10,7 +10,6 @@ servers:
     hosts:
       - 5.75.232.156
     labels:
-      labels:
       traefik.http.routers.daisy_on_rails.entrypoints: web
       traefik.http.routers.daisy_on_rails.rule: Host(`daisy-on-rails.adrienpoly.com`)
       # traefik.http.routers.daisy_on_rails_secure.entrypoints: websecure
