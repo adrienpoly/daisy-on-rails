@@ -7,32 +7,30 @@ image: adrienpoly/daisy-on-rails
 # Deploy to these servers.
 servers:
   web:
-    hosts:
-      - 5.75.232.156
-    labels:
-      traefik.http.routers.daisy_on_rails.entrypoints: web
-      traefik.http.routers.daisy_on_rails.rule: Host(`daisy-on-rails.adrienpoly.com`)
-      # traefik.http.routers.daisy_on_rails_secure.entrypoints: websecure
-      # traefik.http.routers.daisy_on_rails_secure.rule: Host(`daisy-on-rails.adrienpoly.com`)
-      # traefik.http.routers.daisy_on_rails_secure.tls: true
-      # traefik.http.routers.daisy_on_rails_secure.tls.certresolver: letsencrypt
-    options:
-      network: private
+    - 5.75.232.156
+  # job:
+  #   hosts:
+  #     - 5.75.232.156
+  #   cmd: bin/jobs
+
+# Enable SSL auto certification via Let's Encrypt (and allow for multiple apps on one server).
+# Set ssl: false if using something like Cloudflare to terminate SSL (but keep host!).
+proxy:
+  ssl: true
+  host: daisy-on-rails.adrienpoly.com
+  # kamal-proxy connects to your container over port 80, use `app_port` to specify a different port.
+  app_port: 3000
+
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
   username: adrienpoly
 
-  # Always use an access token rather than real password when possible.
+  # Always use an access token rather than real password (pulled from .kamal/secrets).
   password:
     - KAMAL_REGISTRY_PASSWORD
 
-# persist the sqlite database and rails storage directory accross deploys
-volumes:
-  - "storage:/rails/storage"
-# Inject ENV variables into containers (secrets come from .env).
-# Remember to run `kamal env push` after making changes!
 env:
   clear:
     RUBY_YJIT_ENABLE: 1
@@ -41,21 +39,49 @@ env:
     RAILS_MAX_THREADS: 3
   secret:
     - RAILS_MASTER_KEY
+
+# Configure builder setup.
+builder:
+  arch:
+    - amd64
+    - arm64
+
+# Inject ENV variables into containers (secrets come from .kamal/secrets).
+#
+# env:
+#   clear:
+#     DB_HOST: 192.168.0.2
+#   secret:
+#     - RAILS_MASTER_KEY
+
+# Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
+# "bin/kamal logs -r job" will tail logs from the first server in the job section.
+#
+# aliases:
+#   shell: app exec --interactive --reuse "bash"
+
 # Use a different ssh user than root
+#
 # ssh:
 #   user: app
 
-# Configure builder setup.
-# builder:
-#   args:
-#     RUBY_VERSION: 3.2.0
-#   secrets:
-#     - GITHUB_TOKEN
-#   remote:
-#     arch: amd64
-#     host: ssh://app@192.168.0.1
+# Use a persistent storage volume.
+volumes:
+  - "storage:/rails/storage"
+# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
+# hitting 404 on in-flight requests. Combines all files from new and old
+# version inside the asset_path.
+#
+# asset_path: /app/public/assets
 
-# Use accessory services (secrets come from .env).
+# Configure rolling deploys by setting a wait time between batches of restarts.
+#
+# boot:
+#   limit: 10 # Can also specify as a percentage of total hosts, such as "25%"
+#   wait: 2
+
+# Use accessory services (secrets come from .kamal/secrets).
+#
 # accessories:
 #   db:
 #     image: mysql:8.0
@@ -77,55 +103,3 @@ env:
 #     port: 6379
 #     directories:
 #       - data:/data
-# primary_role: web
-# Configure custom arguments for Traefik
-# traefik:
-#   args:
-#     accesslog: true
-#     accesslog.format: json
-# traefik:
-#   options:
-#     publish:
-#       - "443:443"
-#     # volume:
-#     # - "/letsencrypt/acme.json:/letsencrypt/acme.json"
-#   args:
-#     entryPoints.web.address: ":80"
-#     entryPoints.websecure.address: ":443"
-#     entryPoints.web.http.redirections.entryPoint.to: websecure
-#     entryPoints.web.http.redirections.entryPoint.scheme: https
-#     entryPoints.web.http.redirections.entrypoint.permanent: true
-# certificatesResolvers.letsencrypt.acme.email: "you@youremail"
-# certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
-# certificatesResolvers.letsencrypt.acme.httpchallenge: true
-# certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
-# Configure a custom healthcheck (default is /up on port 3000)
-# healthcheck:
-#   path: /healthz
-#   port: 4000
-
-# Bridge fingerprinted assets, like JS and CSS, between versions to avoid
-# hitting 404 on in-flight requests. Combines all files from new and old
-# version inside the asset_path.
-asset_path: /rails/public/assets
-# Configure rolling deploys by setting a wait time between batches of restarts.
-# boot:
-#   limit: 10 # Can also specify as a percentage of total hosts, such as "25%"
-#   wait: 2
-
-# Configure the role used to determine the primary_host. This host takes
-# deploy locks, runs health checks during the deploy, and follow logs, etc.
-#
-# Caution: there's no support for role renaming yet, so be careful to cleanup
-#          the previous role on the deployed hosts.
-# primary_role: web
-
-# Controls if we abort when see a role with no hosts. Disabling this may be
-# useful for more complex deploy configurations.
-#
-# allow_empty_roles: false
-
-builder:
-  cache:
-    type: registry
-    options: mode=max,image-manifest=true,oci-mediatypes=true

@@ -99,7 +99,7 @@ gem "avo", ">= 3.2"
 gem "ransack", "~> 4.1"
 
 gem "activerecord-enhancedsqlite3-adapter"
-gem "litestream", "~> 0.10.1"
+# gem "litestream"
 
 # sitepress
 gem "sitepress-rails", "~> 4.0"
