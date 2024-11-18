@@ -14,7 +14,7 @@ If you are looking for a feature rich tempalte with payments, Team etc check out
 
 ## Technology Stack
 
-- **Rails 7.1**: The latest version of the Ruby on Rails framework.
+- **Rails 7.2**: The latest version of the Ruby on Rails framework.
 - **Hotwire**: Turbo 8 with morphing capabilities.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 - **DaisyUI**: A Tailwind CSS component library for styling and theming.
