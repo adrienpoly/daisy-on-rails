@@ -7,7 +7,12 @@ image: adrienpoly/daisy-on-rails
 # Deploy to these servers.
 servers:
   web:
-    - 5.75.232.156
+    hosts:
+      - 5.75.232.156
+    options:
+      cpus: 1
+      memory: 0.5g
+      memory-swap: 2g
   # job:
   #   hosts:
   #     - 5.75.232.156
